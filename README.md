@@ -116,6 +116,11 @@ The console version of the application is also kept in the project while the Swi
 - [x] Student form
 - [x] JTable for displaying students
 - [x] Table row selection
+- [x] Add student from GUI
+- [x] Update student from GUI
+- [x] Delete student from GUI
+- [x] Search students from GUI
+- [x] Basic input validation
 
 ### Planned Improvements
 
