@@ -18,6 +18,11 @@ I started this project as a simple console-based application and have been addin
 - Connect Java to MySQL using JDBC
 - Display students using a Swing `JTable`
 - Select a student from the table and load their details into the form
+- Search students by name from the GUI
+- Select a student from the table and load their details into the form
+- Update student information from the GUI
+- Delete students from the GUI with confirmation
+- Input validation for student ID, age, and name
 
 ## Technologies Used
 
@@ -114,10 +119,6 @@ The console version of the application is also kept in the project while the Swi
 
 ### Planned Improvements
 
-- [ ] Update student from the GUI
-- [ ] Delete student from the GUI
-- [ ] Search students from the GUI
-- [ ] Improve input validation
 - [ ] Improve GUI design
 - [ ] Make database configuration more secure
 - [ ] Add Maven
