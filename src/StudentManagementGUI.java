@@ -39,9 +39,14 @@ public class StudentManagementGUI extends JFrame {
         );
 
         titleLabel.setFont(
-                new Font("Arial", Font.BOLD, 24)
+                new Font("Arial", Font.BOLD, 26)
         );
 
+        titleLabel.setBorder(
+                BorderFactory.createEmptyBorder(
+                        15, 10, 15, 10
+                )
+        );
         add(titleLabel, BorderLayout.NORTH);
 
         // =========================
@@ -52,9 +57,13 @@ public class StudentManagementGUI extends JFrame {
                 new GridLayout(5, 2, 10, 10)
         );
 
+        formPanel.setFont(
+                new Font("Arial", Font.PLAIN, 14)
+        );
+
         formPanel.setBorder(
                 BorderFactory.createEmptyBorder(
-                        20, 100, 20, 100
+                        15, 100, 15, 100
                 )
         );
 
@@ -107,14 +116,37 @@ public class StudentManagementGUI extends JFrame {
                 columns
         );
 
-        tableScrollPane = new JScrollPane(studentTable);
+        studentTable.setRowHeight(28);
 
+        studentTable.getTableHeader().setFont(
+                new Font("Arial", Font.BOLD, 14)
+        );
+
+        studentTable.setFont(
+                new Font("Arial", Font.PLAIN, 14)
+        );
+
+        studentTable.setSelectionMode(
+                ListSelectionModel.SINGLE_SELECTION
+        );
+
+        studentTable.getTableHeader().setReorderingAllowed(false);
+
+        tableScrollPane = new JScrollPane(studentTable);
+        tableScrollPane.setPreferredSize(
+                new Dimension(900, 220)
+        );
         // =========================
         // BUTTONS
         // =========================
 
-        JPanel buttonPanel = new JPanel();
-
+        JPanel buttonPanel = new JPanel(
+                new FlowLayout(
+                        FlowLayout.CENTER,
+                        10,
+                        8
+                )
+        );
         JButton addButton = new JButton("Add Student");
         JButton viewButton = new JButton("View Students");
         JButton updateButton = new JButton("Update Student");
@@ -127,9 +159,25 @@ public class StudentManagementGUI extends JFrame {
         buttonPanel.add(deleteButton);
         buttonPanel.add(clearButton);
 
-        // =========================
-        // BOTTOM PANEL
-        // =========================
+        Font buttonFont = new Font(
+                "Arial",
+                Font.BOLD,
+                13
+        );
+
+        addButton.setFont(buttonFont);
+        viewButton.setFont(buttonFont);
+        updateButton.setFont(buttonFont);
+        deleteButton.setFont(buttonFont);
+        clearButton.setFont(buttonFont);
+
+        addButton.setFocusPainted(false);
+        viewButton.setFocusPainted(false);
+        updateButton.setFocusPainted(false);
+        deleteButton.setFocusPainted(false);
+        clearButton.setFocusPainted(false);
+
+
 
         // =========================
 // SEARCH PANEL
@@ -140,6 +188,7 @@ public class StudentManagementGUI extends JFrame {
         searchField = new JTextField(20);
 
         JButton searchButton = new JButton("Search");
+        JButton clearSearchButton = new JButton("Clear Search");
 
         searchPanel.add(
                 new JLabel("Search Name:")
@@ -148,6 +197,7 @@ public class StudentManagementGUI extends JFrame {
         searchPanel.add(searchField);
 
         searchPanel.add(searchButton);
+        searchPanel.add(clearSearchButton);
 
 
 // =========================
@@ -227,6 +277,15 @@ public class StudentManagementGUI extends JFrame {
                     JOptionPane.showMessageDialog(
                             this,
                             "Please fill in all fields."
+                    );
+
+                    return;
+                }
+                if (!isValidName(name)) {
+
+                    JOptionPane.showMessageDialog(
+                            this,
+                            "Name can contain only letters and spaces."
                     );
 
                     return;
@@ -330,6 +389,13 @@ public class StudentManagementGUI extends JFrame {
                         "No students found."
                 );
             }
+        });
+
+        clearSearchButton.addActionListener(e -> {
+
+            searchField.setText("");
+
+            loadStudents();
         });
 
         // =========================
@@ -561,6 +627,11 @@ public class StudentManagementGUI extends JFrame {
                         columns
                 )
         );
+    }
+
+    private boolean isValidName(String name) {
+
+        return name.matches("[a-zA-Z ]+");
     }
 
     // =========================

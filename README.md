@@ -121,11 +121,11 @@ The console version of the application is also kept in the project while the Swi
 - [x] Delete student from GUI
 - [x] Search students from GUI
 - [x] Basic input validation
+- [x] Improve GUI design
+- [x] Make database configuration more secure
 
 ### Planned Improvements
 
-- [ ] Improve GUI design
-- [ ] Make database configuration more secure
 - [ ] Add Maven
 - [ ] Add testing
 - [ ] Improve project structure
