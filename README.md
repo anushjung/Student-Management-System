@@ -191,7 +191,6 @@ The Swing application will open and allow you to manage students.
 ## Why I Made This Project
 
 I made this project to get more comfortable with Java by building something practical instead of only following tutorials.
-
 I am adding features one at a time and using Git and GitHub to keep track of how the project develops.
 
 The goal is to continue improving this project and eventually use it as part of my Java internship portfolio.
