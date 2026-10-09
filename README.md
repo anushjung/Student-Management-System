@@ -1,6 +1,6 @@
 # Student Management System
 
-This is a Student Management System that I am building while learning Java and preparing for a Java internship.
+This is a Student Management System that I am building while learning Java.
 
 I started this project as a simple console-based application and have been adding new features step by step. The project now uses MySQL for storing student data and Java Swing for the graphical user interface.
 
