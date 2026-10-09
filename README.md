@@ -126,7 +126,6 @@ The console version of the application is also kept in the project while the Swi
 
 ### Planned Improvements
 
-- [ ] Add Maven
 - [ ] Add testing
 - [ ] Improve project structure
 - [ ] Add better error handling
