@@ -1,4 +1,7 @@
+
 import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class DatabaseConnection {
 
@@ -11,28 +14,20 @@ public class DatabaseConnection {
     private static final String PASSWORD =
             System.getenv("DB_PASSWORD");
 
-    public static Connection getConnection() {
+    public static Connection getConnection() throws SQLException {
 
-        try {
-            return java.sql.DriverManager.getConnection(
-                    URL,
-                    USER,
-                    PASSWORD
+        if (USER == null || USER.isBlank()
+                || PASSWORD == null || PASSWORD.isBlank()) {
+            throw new SQLException(
+                    "Database credentials are missing. " +
+                            "Please configure DB_USER and DB_PASSWORD."
             );
-
-        } catch (Exception e) {
-            System.out.println("Database connection failed!");
-            System.out.println(e.getMessage());
-            return null;
         }
-    }
 
-    public static void main(String[] args) {
-
-        Connection connection = getConnection();
-
-        if (connection != null) {
-            System.out.println("Database connected successfully!");
-        }
+        return DriverManager.getConnection(
+                URL,
+                USER,
+                PASSWORD
+        );
     }
 }
