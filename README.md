@@ -29,10 +29,6 @@ The project started as a console-based application and has been expanded with a 
 - Keep database operations in a DAO class
 - Read database credentials from environment variables
 
-## Screenshots
-
-Add screenshots of your running application to the `screenshots/` folder in this repository. Use your own screenshots and avoid including passwords or other private information.
-
 ## Technologies Used
 
 - Java
