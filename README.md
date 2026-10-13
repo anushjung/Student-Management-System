@@ -33,8 +33,6 @@ The project started as a console-based application and has been expanded with a 
 
 Add screenshots of your running application to the `screenshots/` folder in this repository. Use your own screenshots and avoid including passwords or other private information.
 
-When you have saved the screenshot as `screenshots/main-gui.png`, it will appear here:
-
 ![Student Management System GUI](screenshots/main-gui.png)
 
 ## Technologies Used
